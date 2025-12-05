@@ -1,0 +1,61 @@
+---
+id: kinematics
+title: Kinematics
+description: Movement and positioning systems in humanoid robotics
+sidebar_position: 3
+---
+
+# Kinematics
+
+This chapter covers kinematics in humanoid robotics - the study of motion without considering the forces that cause it.
+
+## Learning Objectives
+- Understand forward and inverse kinematics
+- Apply kinematic principles to robotic movement
+- Calculate joint angles and end-effector positions
+- Analyze kinematic chains in humanoid robots
+
+## Concepts
+Kinematics in robotics deals with the motion of robotic systems without considering the forces that cause the motion. For humanoid robots, kinematics is crucial for understanding how joint angles affect the position and orientation of limbs.
+
+Forward kinematics calculates the end-effector position given known joint angles, while inverse kinematics determines the required joint angles to achieve a desired end-effector position.
+
+## Examples
+1. **Arm Movement**: Calculating the position of a humanoid robot's hand based on shoulder, elbow, and wrist joint angles
+2. **Walking Gait**: Determining joint trajectories for stable bipedal locomotion
+3. **Reaching Motion**: Computing the necessary joint angles for a robot to reach a specific point
+
+## Code/Pseudocode
+```
+// Pseudocode for inverse kinematics calculation
+function inverseKinematics(targetPosition, robotModel):
+    jointAngles = solveForJointAngles(targetPosition, robotModel)
+    if solutionExists(jointAngles):
+        return jointAngles
+    else:
+        return null  // No solution found
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining servo motor construction -->
+
+<!-- Placeholder for diagrams: Diagram explaining series elastic actuator -->
+
+## Exercises
+
+### Exercise 1
+Calculate the end-effector position for a simple 2-link robotic arm given the link lengths and joint angles.
+
+### Exercise 2
+Explain why inverse kinematics is more challenging than forward kinematics in humanoid robots.
+
+### Exercise 3
+Describe the difference between analytical and numerical methods for solving inverse kinematics.
+
+## Summary
+Kinematics is fundamental to humanoid robotics as it determines how robots can position their limbs. Understanding both forward and inverse kinematics is essential for controlling humanoid robot movements.
+
+## References
+- Siciliano, B., & Khatib, O. (2016). Springer Handbook of Robotics
+- Craig, J. J. (2005). Introduction to Robotics: Mechanics and Control
+- Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2006). Robot Modeling and Control

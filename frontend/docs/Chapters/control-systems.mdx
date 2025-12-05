@@ -1,0 +1,63 @@
+---
+id: control-systems
+title: Control Systems
+description: Managing and regulating the behavior of humanoid robots
+sidebar_position: 7
+---
+
+# Control Systems
+
+This chapter explores control systems in humanoid robotics - the methods and algorithms used to manage and regulate robot behavior.
+
+## Learning Objectives
+- Understand different types of control systems in humanoid robotics
+- Analyze stability and performance of control algorithms
+- Implement control systems for specific humanoid robot applications
+- Evaluate control system effectiveness for various tasks
+
+## Concepts
+Control systems in humanoid robotics are responsible for managing the robot's behavior to achieve desired tasks. They process sensor information and generate actuator commands to control the robot's movements and interactions.
+
+Key control approaches include PID control, impedance control, admittance control, and model-based control methods. For humanoid robots, control systems must handle complex dynamics and maintain stability while performing tasks.
+
+## Examples
+1. **Balance Control**: Maintaining upright posture during standing and walking
+2. **Impedance Control**: Controlling robot compliance during interaction with humans
+3. **Trajectory Following**: Precisely following predefined movement patterns
+
+## Code/Pseudocode
+```
+// Pseudocode for PID controller
+class PIDController:
+    function update(setpoint, processVariable):
+        error = setpoint - processVariable
+        integral = integral + error * deltaTime
+        derivative = (error - previousError) / deltaTime
+        output = Kp*error + Ki*integral + Kd*derivative
+        previousError = error
+        return output
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining PID control -->
+
+<!-- Placeholder for diagrams: Diagram explaining feedback control loop -->
+
+## Exercises
+
+### Exercise 1
+Design a simple PID controller for controlling a joint's position in a humanoid robot.
+
+### Exercise 2
+Explain the advantages of using impedance control over position control in humanoid robots.
+
+### Exercise 3
+Compare open-loop and closed-loop control systems in the context of humanoid robotics.
+
+## Summary
+Control systems are fundamental to achieving desired behavior in humanoid robots. Proper control design is essential for stability, safety, and performance of humanoid robot systems.
+
+## References
+- Craig, J. J. (2005). Introduction to Robotics: Mechanics and Control
+- Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2006). Robot Modeling and Control
+- Sciavicco, L., & Siciliano, B. (2000). Modelling and Control of Robot Manipulators

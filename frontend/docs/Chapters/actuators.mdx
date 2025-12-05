@@ -1,0 +1,60 @@
+---
+id: actuators
+title: Actuators & Motors
+description: Power and control systems in humanoid robots
+sidebar_position: 5
+---
+
+# Actuators & Motors
+
+This chapter covers actuators and motors used in humanoid robotics - the components that provide the power and control for robot movement.
+
+## Learning Objectives
+- Identify different types of actuators used in humanoid robots
+- Understand the characteristics and applications of each actuator type
+- Analyze the control requirements for different actuators
+- Design actuator systems for specific humanoid robot applications
+
+## Concepts
+Actuators are the components of a robot that make it move. They convert energy (usually electrical) into mechanical motion. In humanoid robots, actuators must provide precise control while being compact enough to fit within human-like form factors.
+
+Common actuator types in humanoid robotics include servo motors, stepper motors, hydraulic actuators, and pneumatic actuators. Each type has specific advantages and limitations depending on the application.
+
+## Examples
+1. **Servo Motors in Joint Control**: High-precision motors used for controlling arm and leg joints
+2. **Hydraulic Actuators**: Used in large humanoid robots like Atlas for high-power applications
+3. **Series Elastic Actuators**: Provide compliant control important for safe human-robot interaction
+
+## Code/Pseudocode
+```
+// Pseudocode for actuator control
+function controlActuator(actuatorId, targetPosition, maxTorque):
+    currentPosition = readPosition(actuatorId)
+    positionError = targetPosition - currentPosition
+    controlSignal = PIDController.calculate(positionError)
+    applyTorque(actuatorId, controlSignal, maxTorque)
+```
+
+Diagrams
+<!-- Placeholder for diagrams: Diagram explaining servo motor construction -->
+
+<!-- Placeholder for diagrams: Diagram explaining series elastic actuator -->
+
+## Exercises
+
+### Exercise 1
+Compare the advantages and disadvantages of using servo motors versus hydraulic actuators in humanoid robots.
+
+### Exercise 2
+Explain the importance of backdrivability in humanoid robot actuators.
+
+### Exercise 3
+Describe how series elastic actuators improve safety in humanoid robots.
+
+## Summary
+Actuators and motors form the foundation of humanoid robot movement. Selecting the right actuator type and implementing proper control strategies is crucial for achieving desired robot behaviors.
+
+## References
+- Handbook of Robotics - Siciliano, B., & Khatib, O.
+- Design of Advanced Actuation and Control Systems for Humanoid Robots
+- Pratt, G. A., & Williamson, M. M. (1995). Series Elastic Actuators

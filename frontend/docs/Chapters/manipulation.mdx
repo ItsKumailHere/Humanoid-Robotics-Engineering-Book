@@ -1,0 +1,62 @@
+---
+id: manipulation
+title: Manipulation
+description: Physical interaction and object handling in humanoid robots
+sidebar_position: 11
+---
+
+# Manipulation
+
+This chapter explores manipulation in humanoid robotics - the ability of humanoid robots to physically interact with and control objects in their environment.
+
+## Learning Objectives
+- Understand the fundamentals of robotic manipulation
+- Apply grasp planning and manipulation techniques to humanoid tasks
+- Analyze the challenges of dexterous manipulation in humanoid robots
+- Design manipulation systems for specific applications
+
+## Concepts
+Manipulation in humanoid robots involves the ability to grasp, move, and manipulate objects in the environment. This requires sophisticated control of the robot's hands and arms to perform tasks ranging from simple pick-and-place to complex tool use.
+
+Key challenges in humanoid manipulation include grasp planning, force control, dexterity, and adapting to object variations. Successful manipulation requires integration of perception, planning, and control systems.
+
+## Examples
+1. **Grasp Planning**: Determining stable grasp points on unknown objects
+2. **Bimanual Manipulation**: Using two hands to manipulate objects
+3. **Tool Use**: Using objects as tools to extend manipulation capabilities
+
+## Code/Pseudocode
+```
+// Pseudocode for grasp planning
+function planGrasp(objectModel, handModel):
+    graspPoints = identifyGraspPoints(objectModel)
+    for each point in graspPoints:
+        graspConfiguration = calculateGraspConfiguration(point, handModel)
+        if isStableGrasp(graspConfiguration, objectModel):
+            return graspConfiguration
+    return null  // No stable grasp found
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining grasp types -->
+
+<!-- Placeholder for diagrams: Diagram explaining manipulation workspace -->
+
+## Exercises
+
+### Exercise 1
+Explain the difference between precision and power grasps in robotic manipulation.
+
+### Exercise 2
+Describe the challenges of bimanual manipulation in humanoid robots.
+
+### Exercise 3
+Compare model-based and data-driven approaches to grasp planning.
+
+## Summary
+Manipulation is a key capability for humanoid robots to interact with their environment. Developing dexterous manipulation capabilities remains an active research area with significant challenges in planning, control, and hardware design.
+
+## References
+- Siciliano, B., & Khatib, O. (2016). Springer Handbook of Robotics
+- Okamura, A. M. (2017). A Brief Introduction to Manipulation.
+- Murray, R. M., Li, Z., & Sastry, S. S. (1994). A Mathematical Introduction to Robotic Manipulation

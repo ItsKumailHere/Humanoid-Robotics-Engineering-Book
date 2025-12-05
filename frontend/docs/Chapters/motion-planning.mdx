@@ -1,0 +1,66 @@
+---
+id: motion-planning
+title: Motion Planning
+description: Pathfinding and navigation for humanoid robots
+sidebar_position: 8
+---
+
+# Motion Planning
+
+This chapter covers motion planning in humanoid robotics - algorithms and methods for planning robot movements in complex environments.
+
+## Learning Objectives
+- Understand fundamental motion planning algorithms
+- Apply path planning techniques to humanoid robot navigation
+- Analyze the complexity of planning for high-DOF systems
+- Implement planning algorithms for specific humanoid tasks
+
+## Concepts
+Motion planning for humanoid robots involves finding collision-free paths from a start configuration to a goal configuration. The complexity is significantly higher than for simple mobile robots due to the high number of degrees of freedom and the need to maintain balance.
+
+Key approaches include sampling-based methods (like RRT), grid-based methods, and optimization-based approaches. For humanoid robots, planning often needs to consider balance constraints, multi-contact planning, and dynamic movements.
+
+## Examples
+1. **Navigation**: Planning paths through environments with obstacles
+2. **Whole-Body Motion**: Planning coordinated motion for all limbs while maintaining balance
+3. **Grasping**: Planning approach paths for manipulation tasks
+
+## Code/Pseudocode
+```
+// Pseudocode for RRT motion planning
+function RRT(start, goal, environment, iterations):
+    tree = [start]
+    for i = 0 to iterations:
+        randomPoint = sampleRandomConfiguration()
+        nearest = findNearest(tree, randomPoint)
+        newPoint = extend(nearest, randomPoint)
+        if isValid(newPoint, environment):
+            tree.append(newPoint)
+            if distance(newPoint, goal) < threshold:
+                return getPathToGoal(tree, goal)
+    return failure
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining configuration space -->
+
+<!-- Placeholder for diagrams: Diagram explaining RRT algorithm -->
+
+## Exercises
+
+### Exercise 1
+Explain why motion planning for humanoid robots is more complex than for wheeled robots.
+
+### Exercise 2
+Compare sampling-based and grid-based motion planning approaches for humanoid robots.
+
+### Exercise 3
+Describe the challenges of planning whole-body motion for humanoid robots.
+
+## Summary
+Motion planning is critical for humanoid robot autonomy. The high degrees of freedom and balance requirements make planning particularly challenging but essential for practical humanoid robot applications.
+
+## References
+- LaValle, S. M. (2006). Planning Algorithms
+- Siciliano, B., & Khatib, O. (2016). Springer Handbook of Robotics
+- Choset, H. et al. (2005). Principles of Robot Motion: Theory, Algorithms, and Implementations

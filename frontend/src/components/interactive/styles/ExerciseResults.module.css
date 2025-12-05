@@ -1,0 +1,125 @@
+.resultsContainer {
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  background-color: #f8fff9;
+}
+
+.summary {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.summary h3 {
+  margin-top: 0;
+  color: #28a745;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.statValue {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.detailedResults h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.resultsList {
+  list-style: none;
+  padding: 0;
+}
+
+.resultItem {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border-left: 4px solid #ccc;
+}
+
+.resultItem.correct {
+  background-color: #d4edda;
+  border-left-color: #28a745;
+}
+
+.resultItem.incorrect {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.questionSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questionText {
+  flex: 1;
+}
+
+.resultIndicator {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.resultItem.correct .resultIndicator {
+  color: #28a745;
+}
+
+.resultItem.incorrect .resultIndicator {
+  color: #dc3545;
+}
+
+.feedback {
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.retryButton {
+  background-color: #007cba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.retryButton:hover {
+  background-color: #005a87;
+}
+
+.noResults {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}

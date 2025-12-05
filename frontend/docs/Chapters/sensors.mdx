@@ -1,0 +1,60 @@
+---
+id: sensors
+title: Sensors
+description: Perception and feedback systems in humanoid robots
+sidebar_position: 6
+---
+
+# Sensors
+
+This chapter covers sensors used in humanoid robotics - the components that enable robots to perceive their environment and provide feedback about their state.
+
+## Learning Objectives
+- Understand different types of sensors used in humanoid robots
+- Analyze the role of sensors in robot perception and control
+- Design sensor systems for humanoid robot applications
+- Implement sensor fusion for enhanced perception
+
+## Concepts
+Sensors in humanoid robots serve multiple purposes: providing perception of the environment, feedback for control systems, and safety monitoring. They can be categorized into proprioceptive sensors (measuring internal state) and exteroceptive sensors (measuring external environment).
+
+Key sensor types include IMUs for orientation and acceleration, cameras for vision, force/torque sensors for interaction, and range sensors for environment mapping. Sensor fusion combines data from multiple sensors to improve perception accuracy.
+
+## Examples
+1. **Inertial Measurement Units (IMUs)**: Used for balance and orientation in walking robots
+2. **Force/Torque Sensors**: Located in feet and hands to measure interaction forces
+3. **Cameras and LIDAR**: Enable environmental perception and navigation
+
+## Code/Pseudocode
+```
+// Pseudocode for sensor fusion
+function sensorFusion(cameraData, lidarData, imuData):
+    worldState = estimateWorldState(cameraData, lidarData)
+    robotState = estimateRobotState(imuData)
+    fusedState = combineStates(worldState, robotState)
+    return fusedState
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining sensor placement in humanoid robots -->
+
+<!-- Placeholder for diagrams: Diagram explaining sensor fusion -->
+
+## Exercises
+
+### Exercise 1
+Explain the difference between proprioceptive and exteroceptive sensors in humanoid robots.
+
+### Exercise 2
+Describe how IMUs contribute to balance control in humanoid robots.
+
+### Exercise 3
+Compare the advantages and disadvantages of using cameras versus LIDAR for environment perception.
+
+## Summary
+Sensors are critical for humanoid robot perception and control. Proper selection and integration of sensors enable robots to safely interact with their environment and perform complex tasks.
+
+## References
+- Siciliano, B., & Khatib, O. (2016). Springer Handbook of Robotics
+- Sensor Handbook for Humanoid Robotics Applications
+- Thrun, S., Burgard, W., & Fox, D. (2005). Probabilistic Robotics

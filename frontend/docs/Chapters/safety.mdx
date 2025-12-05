@@ -1,0 +1,66 @@
+---
+id: safety
+title: Safety
+description: Ensuring safe operation of humanoid robots
+sidebar_position: 13
+---
+
+# Safety
+
+This chapter explores safety in humanoid robotics - ensuring that humanoid robots can operate safely around humans and in human environments.
+
+## Learning Objectives
+- Understand the fundamental principles of humanoid robot safety
+- Analyze risks associated with humanoid robot operation
+- Implement safety systems and protocols for humanoid robots
+- Evaluate safety measures and their effectiveness
+
+## Concepts
+Safety in humanoid robotics is paramount, as these robots are designed to operate in close proximity to humans. Safety encompasses mechanical safety, operational safety, and behavioral safety. This includes collision avoidance, compliant control, emergency stopping, and safe failure modes.
+
+Key safety considerations include physical safety during human-robot interaction, operational safety to prevent damage to the robot or environment, and cybersecurity measures to prevent malicious control of the robot.
+
+## Examples
+1. **Collision Avoidance**: Systems that prevent robots from colliding with humans
+2. **Compliant Control**: Systems that limit forces during contact with humans
+3. **Emergency Stop**: Procedures to safely halt robot operations when needed
+
+## Code/Pseudocode
+```
+// Pseudocode for safety monitoring
+function monitorSafety(robotState, environmentState, safetyLimits):
+    if isCollisionImminent(robotState, environmentState):
+        executeSafeStop()
+        return false
+    for each joint in robotState.joints:
+        if joint.torque > safetyLimits.maxTorque:
+            reduceTorque(joint, safetyLimits.maxTorque)
+    for each sensor in robotState.sensors:
+        if sensor.data > safetyLimits.maxValue:
+            triggerSafetyResponse(sensor)
+    return true  // Safety maintained
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining safety zones -->
+
+<!-- Placeholder for diagrams: Diagram explaining safety hierarchy -->
+
+## Exercises
+
+### Exercise 1
+Explain the concept of collaborative robots (cobots) and their safety requirements.
+
+### Exercise 2
+Describe the safety challenges specific to humanoid robots compared to other robot types.
+
+### Exercise 3
+Compare passive and active safety measures for humanoid robots.
+
+## Summary
+Safety is critical for humanoid robots that operate in human environments. Comprehensive safety systems must be integrated into the hardware, control systems, and operational procedures to ensure safe robot operation.
+
+## References
+- ISO 13482:2014 - Robots and robotic devices — Personal care robots
+- Siciliano, B., & Khatib, O. (2016). Springer Handbook of Robotics
+- Goodrich, M. A., & Schultz, A. C. (2007). Human-robot interaction: a survey.

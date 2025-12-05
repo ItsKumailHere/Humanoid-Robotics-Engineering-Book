@@ -1,0 +1,57 @@
+.exerciseContainer {
+  border: 2px solid #007cba;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  background-color: #ffffff;
+}
+
+.exerciseHeader {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.exerciseTitle {
+  margin: 0 0 8px 0;
+  color: #007cba;
+  font-size: 1.2em;
+}
+
+.exerciseDescription {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+}
+
+.exerciseBody {
+  margin: 16px 0;
+}
+
+.solution {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #ccc;
+}
+
+.solution summary {
+  cursor: pointer;
+  color: #007cba;
+  font-weight: bold;
+}
+
+.solutionContent {
+  margin-top: 8px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 3px solid #007cba;
+}
+
+.unsupported {
+  color: #dc3545;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}

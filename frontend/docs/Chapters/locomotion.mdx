@@ -1,0 +1,62 @@
+---
+id: locomotion
+title: Locomotion & Gait
+description: Walking and movement patterns in humanoid robots
+sidebar_position: 9
+---
+
+# Locomotion & Gait
+
+This chapter explores locomotion and gait in humanoid robotics - how humanoid robots achieve movement and walking patterns.
+
+## Learning Objectives
+- Understand different approaches to humanoid locomotion
+- Analyze gait patterns for stability and efficiency
+- Implement control strategies for bipedal walking
+- Compare various walking algorithms for humanoid robots
+
+## Concepts
+Locomotion in humanoid robots is one of the most challenging aspects of humanoid robotics. Unlike wheeled robots, bipedal robots must maintain balance while walking, which requires precise control and understanding of dynamics.
+
+Key approaches to humanoid locomotion include Zero-Moment Point (ZMP) control, Capture Point, and dynamic walking. Gait generation involves planning footstep placements, center of mass trajectories, and joint movements.
+
+## Examples
+1. **ZMP Walking**: Maintaining the zero-moment point within the support polygon
+2. **Dynamic Walking**: Using natural dynamics to achieve efficient locomotion
+3. **Terrain Adaptation**: Adjusting gait for different surfaces and obstacles
+
+## Code/Pseudocode
+```
+// Pseudocode for ZMP-based walking
+function generateWalkingPattern(stepLength, stepWidth, stepTime, walkingDuration):
+    footsteps = planFootsteps(stepLength, stepWidth, stepTime, walkingDuration)
+    for each step in footsteps:
+        comTrajectory = generateCoMTrajectory(step, stepTime)
+        zmpTrajectory = deriveZMPTrajectory(comTrajectory)
+        jointAngles = inverseKinematics(zmpTrajectory, comTrajectory)
+        executeStep(jointAngles)
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining ZMP concept -->
+
+<!-- Placeholder for diagrams: Diagram explaining gait phases -->
+
+## Exercises
+
+### Exercise 1
+Explain the concept of Zero-Moment Point and its importance in humanoid walking.
+
+### Exercise 2
+Compare the advantages and disadvantages of static vs. dynamic walking in humanoid robots.
+
+### Exercise 3
+Describe how humanoid robots adapt their gait to walk on uneven terrain.
+
+## Summary
+Locomotion and gait are fundamental challenges in humanoid robotics. Successful implementation requires combining control theory, dynamics, and real-time planning to achieve stable and efficient walking.
+
+## References
+- Kajita, S. (2005). Humanoid Robot (K. Yokoi, Trans.). IEEE Press.
+- Vukobratović, M., & Borovac, B. (2004). Zero-moment point – thirty five years of its life.
+- Pratt, J., & Pratt, G. (2017). Agility and versatility in bipedal locomotion.

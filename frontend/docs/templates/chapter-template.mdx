@@ -1,0 +1,88 @@
+---
+id: chapter-template
+title: Chapter Title
+description: Chapter description
+---
+
+import ExerciseComponent from '@site/src/components/interactive/ExerciseComponent';
+
+# Chapter Title
+
+## Learning Objectives
+- Understand the key concepts of this chapter
+- Apply the concepts to practical scenarios
+- Analyze related examples and exercises
+
+## Concepts
+<!-- Core concepts explaining the main ideas of the chapter -->
+
+## Examples
+<!-- Practical examples supporting the concepts -->
+
+## Code/Pseudocode
+<!-- Code samples or validated pseudocode -->
+
+
+
+### Interactive Exercise 1
+<ExerciseComponent
+  exercise={{
+    id: 'ex-chapter-template-001',
+    type: 'multiple-choice',
+    question: 'What is the primary focus of this chapter?',
+    options: [
+      { value: 'A', text: 'Basic definitions only' },
+      { value: 'B', text: 'Complex theoretical concepts' },
+      { value: 'C', text: 'Practical applications of concepts' },
+      { value: 'D', text: 'Historical context' }
+    ],
+    correctAnswers: ['C'],
+    description: 'Test your understanding of the chapter\'s main focus.',
+    solution: 'The chapter focuses on practical applications of the concepts covered.',
+    explanation: 'This chapter emphasizes applying theoretical concepts to practical scenarios, which is why option C is correct.'
+  }}
+/>
+
+### Interactive Exercise 2
+<ExerciseComponent
+  exercise={{
+    id: 'ex-chapter-template-002',
+    type: 'multiple-select',
+    question: 'Which of the following are key concepts covered in this chapter?',
+    options: [
+      { value: 'concept1', text: 'Concept 1' },
+      { value: 'concept2', text: 'Concept 2' },
+      { value: 'concept3', text: 'Concept 3' },
+      { value: 'concept4', text: 'Concept 4' }
+    ],
+    correctAnswers: ['concept1', 'concept3'],
+    description: 'Identify the key concepts from this chapter.',
+    solution: 'Concept 1 and Concept 3 are the main concepts covered in this chapter.',
+    explanation: 'While all concepts may be mentioned, only Concepts 1 and 3 are central to the chapter material.'
+  }}
+/>
+
+### Interactive Exercise 3
+<ExerciseComponent
+  exercise={{
+    id: 'ex-chapter-template-003',
+    type: 'multiple-choice',
+    question: 'How can you apply the concepts from this chapter?',
+    options: [
+      { value: 'A', text: 'Through practical exercises' },
+      { value: 'B', text: 'By reading only' },
+      { value: 'C', text: 'Through memorization' },
+      { value: 'D', text: 'Through theoretical study alone' }
+    ],
+    correctAnswers: ['A'],
+    description: 'Consider the best approach to apply the chapter concepts.',
+    solution: 'The concepts are best applied through practical exercises that reinforce the learning.',
+    explanation: 'Application involves practical exercises that help solidify understanding.'
+  }}
+/>
+
+## Summary
+<!-- Concise summary of key concepts -->
+
+## References
+<!-- Include citations to verifiable sources -->

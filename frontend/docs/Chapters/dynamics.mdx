@@ -1,0 +1,61 @@
+---
+id: dynamics
+title: Dynamics
+description: Forces and motion in robotic systems
+sidebar_position: 4
+---
+
+# Dynamics
+
+This chapter covers dynamics in humanoid robotics - the study of forces and torques that cause motion.
+
+## Learning Objectives
+- Understand the principles of robotic dynamics
+- Apply Newton-Euler and Lagrangian formulations
+- Analyze forces acting on humanoid robot joints
+- Design control systems considering dynamic effects
+
+## Concepts
+Robot dynamics deals with the relationship between forces acting on a robot mechanism and the resulting motion. For humanoid robots, dynamics is crucial for stable walking, manipulation, and interaction with the environment.
+
+The dynamic equations of motion for a robot include terms for inertial forces, Coriolis and centrifugal forces, and gravitational forces. These equations are fundamental for controller design and simulation.
+
+## Examples
+1. **Walking Stability**: Calculating forces needed to maintain balance during bipedal locomotion
+2. **Manipulation Tasks**: Understanding forces during object grasping and manipulation
+3. **Impact Response**: Modeling how robots react when hitting objects or surfaces
+
+## Code/Pseudocode
+```
+// Pseudocode for computing robot dynamics
+function computeDynamics(jointPositions, jointVelocities, jointAccelerations, robotModel):
+    M = computeInertiaMatrix(jointPositions, robotModel)  // Inertia matrix
+    C = computeCoriolisForces(jointPositions, jointVelocities, robotModel)  // Coriolis matrix
+    G = computeGravityForces(jointPositions, robotModel)  // Gravity vector
+    tau = M * jointAccelerations + C * jointVelocities + G  // Required joint torques
+    return tau
+```
+
+## Diagrams
+<!-- Placeholder for diagrams: Diagram explaining forces in robotic systems -->
+
+<!-- Placeholder for diagrams: Diagram explaining dynamic equations -->
+
+## Exercises
+
+### Exercise 1
+Derive the dynamic equations for a simple 2-DOF planar manipulator.
+
+### Exercise 2
+Explain the role of Coriolis and centrifugal forces in humanoid robot movement.
+
+### Exercise 3
+Compare Newton-Euler and Lagrangian approaches to computing robot dynamics.
+
+## Summary
+Dynamics is essential for understanding the forces and torques required for humanoid robot movement. Proper dynamic modeling is crucial for controller design and ensuring stable robot operation.
+
+## References
+- Featherstone, R. (2008). Rigid Body Dynamics Algorithms
+- Murray, R. M., Li, Z., & Sastry, S. S. (1994). A Mathematical Introduction to Robotic Manipulation
+- Sciavicco, L., & Siciliano, B. (2000). Modelling and Control of Robot Manipulators
