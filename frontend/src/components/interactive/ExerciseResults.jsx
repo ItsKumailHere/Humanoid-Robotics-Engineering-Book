@@ -12,7 +12,7 @@ const ExerciseResults = ({ results, onRetry }) => {
       </div>
     );
   }
-
+ 
   // Calculate summary statistics
   const totalExercises = results.length;
   const correctAnswers = results.filter(result => result.isCorrect).length;

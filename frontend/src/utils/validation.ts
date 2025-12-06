@@ -47,7 +47,7 @@ export const validateMultipleAnswers = (userAnswers:any, correctAnswers:any) => 
     return false;
   }
   
-  // Check that every user answer is in the correct answers
+  // Check that every user answer is in the correct answers 
   for (const userAnswer of userAnswers) {
     if (!correctAnswers.some((correctAnswer:any) => 
       validateSingleAnswer(userAnswer, correctAnswer)

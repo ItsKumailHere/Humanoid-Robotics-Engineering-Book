@@ -10,7 +10,7 @@ import styles from './styles/MCQComponent.module.css';
 const MCQComponent = ({
   question,
   options,
-  multipleAnswers = false,
+  multipleAnswers = false, 
   questionId, 
   correctAnswers,
   onSubmit,

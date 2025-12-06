@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Humanoid Robotics Tutorial', 
-  tagline: 'Dinosaurs are cool',
+  title: 'Humanoid Robotics: AI-Driven Textbook',
+  tagline: 'Comprehensive guide to humanoid robotics concepts, applications, and implementation',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -22,8 +22,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'panaversity', // Usually your GitHub org/user name.
+  projectName: 'physical-ai-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -60,9 +60,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Humanoid Robotics Textbook',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Humanoid Robotics Textbook Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -70,11 +70,22 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Textbook',
         },
-  
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: 'doc',
+          position: 'left',
+          docId: 'glossary',
+          label: 'Glossary',
+        },
+        {
+          type: 'doc',
+          position: 'left',
+          docId: 'bibliography',
+          label: 'Bibliography',
+        },
+        {
+          href: 'https://github.com/panaversity/physical-ai-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -84,43 +95,50 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Textbook',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Introduction',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Glossary',
+              to: '/docs/glossary',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Bibliography',
+              to: '/docs/bibliography',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
-            
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/panaversity/physical-ai-book',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io',
+            },
+          ],
+        },
+        {
+          title: 'AI Integration',
+          items: [
+            {
+              label: 'RAG Chatbot',
+              href: '/chatbot', // Placeholder - will be implemented later
+            },
+            {
+              label: 'API Reference',
+              href: '/api',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Panaversity. Humanoid Robotics: AI-Driven Textbook.`,
     },
     prism: {
       theme: prismThemes.github,
