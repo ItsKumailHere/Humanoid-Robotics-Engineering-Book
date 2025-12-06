@@ -14,7 +14,7 @@ const ExerciseComponent = ({ exercise }) => {
     console.log('Answer submitted:', answerData);
     // In a real implementation, this would send the data to a backend
     // and potentially update user progress
-  };
+  }; 
 
   // Render different exercise types based on the type property
   const renderExerciseContent = () => {

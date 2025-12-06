@@ -8,7 +8,7 @@ const API_BASE_URL = '/api/v1';
 
 /**
  * Submit an exercise answer for validation
- * @param {string} exerciseId - The ID of the exercise
+ * @param {string} exerciseId - The ID of the exercise 
  * @param {object} answerData - The user's answer data
  * @param {string} userId - The ID of the user (optional for anonymous tracking)
  * @returns {Promise<object>} The validation result
