@@ -4,7 +4,7 @@
 import re
 from typing import List, Dict, Any
 from dataclasses import dataclass
-from backend.database.config import DBConfig
+from database.config import DBConfig
 
 @dataclass
 class ContentChunk:

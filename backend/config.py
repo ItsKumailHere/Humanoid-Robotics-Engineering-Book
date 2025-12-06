@@ -3,17 +3,18 @@
 
 import os
 from typing import Optional
-from backend.database.config import DBConfig
-from backend.database.qdrant_config import qdrant_settings
-from backend.api.gemini_service import GeminiConfig
+from database.config import db_config
+from database.qdrant_config import qdrant_settings
+from api.gemini_service import GeminiConfig
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 class BackendConfig:
     """Main configuration class that coordinates all backend services"""
 
     def __init__(self):
-        # Database configuration
-        self.db_config = DBConfig()
-
+        # Database configuration is imported as db_config
         # Qdrant configuration (imported as qdrant_settings)
         self.qdrant_config = qdrant_settings
 
@@ -24,9 +25,9 @@ class BackendConfig:
         self.app_environment = os.getenv("APP_ENV", "development")
         self.debug = self.app_environment == "development"
 
-        # Content processing settings
-        self.content_chunk_size = self.db_config.MAX_CHUNK_SIZE
-        self.content_overlap = self.db_config.CHUNK_OVERLAP
+        # Content processing settings (using the imported db_config)
+        self.content_chunk_size = db_config.MAX_CHUNK_SIZE
+        self.content_overlap = db_config.CHUNK_OVERLAP
 
         # API settings
         self.api_version = "v1"
@@ -45,7 +46,7 @@ class BackendConfig:
             errors.append("QDRANT_HOST not set for production environment")
 
         # Check if database settings are valid
-        if not self.db_config.DATABASE_URL:
+        if not db_config.DATABASE_URL:
             errors.append("DATABASE_URL not set")
 
         if errors:

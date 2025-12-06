@@ -5,10 +5,10 @@ from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
-from backend.database.qdrant_service import qdrant_service
-from backend.utils.content_extraction import ContentExtractor
-from backend.utils.chunking import ContentChunker
-from backend.api.gemini_service import gemini_service
+from database.qdrant_service import qdrant_service
+from utils.content_extraction import ContentExtractor
+from utils.chunking import ContentChunker
+from api.gemini_service import gemini_service
 import logging
 import os
 
@@ -85,7 +85,7 @@ async def query_content(request: QueryRequest):
         search_results = qdrant_service.search_similar(
             query_embedding=query_embedding,
             chapter_filter=request.chapter_filter,
-            top_k=request.top_k
+            top_k=request.top_k or 5
         )
 
         execution_time = time.time() - start_time
@@ -117,7 +117,7 @@ async def chat_with_textbook(request: ChatRequest):
         # 2. Search in the vector database for relevant content
         search_results = qdrant_service.search_similar(
             query_embedding=query_embedding,
-            top_k=request.top_k
+            top_k=request.top_k or 5
         )
 
         # 3. Use Gemini API to generate a response based on retrieved content

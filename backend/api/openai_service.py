@@ -1,12 +1,11 @@
 # OpenAI Integration for RAG Chatbot
 # Handles OpenAI API calls for generating responses based on retrieved content
 
-import openai
+from openai import OpenAI
 import os
 import asyncio
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from backend.database.config import DBConfig
 
 class OpenAIConfig:
     """Configuration for OpenAI integration"""
@@ -16,9 +15,9 @@ class OpenAIConfig:
         self.temperature = float(os.getenv("OPENAI_TEMPERATURE", "0.7"))
         self.max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", "1000"))
         
-        # Set the API key
+        # Initialize the OpenAI client
         if self.api_key:
-            openai.api_key = self.api_key
+            self.client = OpenAI(api_key=self.api_key)
         else:
             raise ValueError("OPENAI_API_KEY environment variable not set")
 
@@ -35,9 +34,9 @@ class OpenAIService:
     def generate_embedding(self, text: str) -> List[float]:
         """Generate embedding for a text using OpenAI's embedding API"""
         try:
-            response = openai.embeddings.create(
+            response = self.config.client.embeddings.create(
                 input=text,
-                model="text-embedding-ada-002"  # Using the recommended embedding model
+                model="text-embedding-3-small"  # Updated to latest embedding model
             )
             return response.data[0].embedding
         except Exception as e:
@@ -47,11 +46,11 @@ class OpenAIService:
     async def generate_embedding_async(self, text: str) -> List[float]:
         """Async version of generate_embedding"""
         try:
-            response = await openai.Embedding.acreate(
+            response = await self.config.client.embeddings.create(
                 input=text,
-                model="text-embedding-ada-002"
+                model="text-embedding-3-small"
             )
-            return response['data'][0]['embedding']
+            return response.data[0].embedding
         except Exception as e:
             print(f"Error generating embedding: {str(e)}")
             return []
@@ -61,7 +60,7 @@ class OpenAIService:
                          temperature: Optional[float] = None) -> str:
         """Generate a response based on the provided messages"""
         try:
-            response = openai.chat.completions.create(
+            response = self.config.client.chat.completions.create(
                 model=self.config.model,
                 messages=messages,
                 temperature=temperature or self.config.temperature,
@@ -78,7 +77,7 @@ class OpenAIService:
                                     temperature: Optional[float] = None) -> str:
         """Async version of generate_response"""
         try:
-            response = await openai.ChatCompletion.acreate(
+            response = await self.config.client.chat.completions.create(
                 model=self.config.model,
                 messages=messages,
                 temperature=temperature or self.config.temperature,

@@ -187,6 +187,53 @@ If you face issues running locally, you can use Google Colab:
 - **Embedding Issues**: The placeholder embedding function returns 768-dim vectors; ensure this matches your actual embedding service if you integrate one
 - **Memory Issues**: The free tier optimizations help, but large datasets may still cause memory issues during indexing
 
+### Testing the RAG Functionality
+
+After setting up the backend, you can test the RAG functionality with these steps:
+
+1. **Index the textbook content**:
+   ```bash
+   # After the server is running, index the content using the API endpoint:
+   curl -X POST http://localhost:8000/api/v1/index-content
+   ```
+
+2. **Test the chat functionality**:
+   ```bash
+   curl -X POST http://localhost:8000/api/v1/chat \
+     -H "Content-Type: application/json" \
+     -d '{
+       "message": "What are the key components of humanoid robotics?",
+       "top_k": 5,
+       "temperature": 0.7
+     }'
+   ```
+
+3. **Test the query functionality**:
+   ```bash
+   curl -X POST http://localhost:8000/api/v1/query \
+     -H "Content-Type: application/json" \
+     -d '{
+       "query": "kinematics in robotics",
+       "top_k": 3
+     }'
+   ```
+
+4. **Use the automated test script**:
+   ```bash
+   python test_rag_functionality.py
+   ```
+
+### API Endpoints Reference
+
+- `GET /` - Root endpoint
+- `GET /health` - Health check
+- `GET /docs` - Interactive API documentation (Swagger UI)
+- `POST /api/v1/chat` - Chat with textbook content (most important for RAG)
+- `POST /api/v1/query` - Query textbook content
+- `GET /api/v1/chapters` - Get all chapters
+- `GET /api/v1/chapters/{id}` - Get specific chapter
+- `POST /api/v1/index-content` - Index textbook content into vector store
+
 ## Future Enhancements
 
 1. Personalization system based on user interactions

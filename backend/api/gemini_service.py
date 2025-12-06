@@ -6,7 +6,9 @@ import os
 import asyncio
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from backend.database.config import DBConfig
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 class GeminiConfig:
     """Configuration for Gemini integration"""

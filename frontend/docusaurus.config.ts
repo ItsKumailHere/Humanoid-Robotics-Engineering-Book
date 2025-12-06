@@ -124,19 +124,19 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: 'AI Integration',
-          items: [
-            {
-              label: 'RAG Chatbot',
-              href: '/chatbot', // Placeholder - will be implemented later
-            },
-            {
-              label: 'API Reference',
-              href: '/api',
-            },
-          ],
-        },
+        // {
+        //   title: 'AI Integration',
+        //   items: [
+        //     {
+        //       label: 'RAG Chatbot',
+        //       href: '/chatbot', // Placeholder - will be implemented later
+        //     },
+        //     {
+        //       label: 'API Reference',
+        //       href: '/api',
+        //     },
+        //   ],
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Panaversity. Humanoid Robotics: AI-Driven Textbook.`,
     },

@@ -2,7 +2,7 @@
 # Configuration for Qdrant Cloud vector storage
 
 from typing import Optional
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 class QdrantSettings(BaseSettings):
     # Qdrant connection settings
@@ -10,6 +10,7 @@ class QdrantSettings(BaseSettings):
     QDRANT_API_KEY: Optional[str] = None  # Qdrant Cloud API key
     QDRANT_PORT: int = 6333  # Default Qdrant port
     QDRANT_GRPC_PORT: int = 6334  # Default Qdrant gRPC port
+    GEMINI_API_KEY: Optional[str] = None  # Google Gemini API key
     
     # Collection settings
     COLLECTION_NAME: str = "humanoid_robotics_content"

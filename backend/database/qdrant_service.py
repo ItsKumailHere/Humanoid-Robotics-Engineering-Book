@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Optional
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 import uuid
-from backend.database.qdrant_config import qdrant_settings, COLLECTION_CONFIG
+from database.qdrant_config import qdrant_settings, COLLECTION_CONFIG
 
 class QdrantService:
     def __init__(self):
@@ -19,7 +19,7 @@ class QdrantService:
             )
         else:
             # Connect to local Qdrant (for development)
-            self.client = QdrantClient(host='localhost', port=qdrant_settings.QDRANT_PORT)
+            self.client = QdrantClient(path="qdrant_data")
         
         self.collection_name = qdrant_settings.COLLECTION_NAME
         self._initialize_collection()
@@ -31,30 +31,44 @@ class QdrantService:
             self.client.get_collection(self.collection_name)
         except:
             # Create collection if it doesn't exist with free-tier optimized settings
+            from qdrant_client.http.models import Distance
+            # Convert string distance metric to Distance enum
+            distance_map = {
+                'Cosine': Distance.COSINE,
+                'Euclid': Distance.EUCLID,
+                'Manhattan': Distance.MANHATTAN,
+                'Dot': Distance.DOT
+            }
+            distance_enum = distance_map.get(qdrant_settings.DISTANCE_METRIC, Distance.COSINE)
+            
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=models.VectorParams(
                     size=qdrant_settings.EMBEDDING_DIM,
-                    distance=qdrant_settings.DISTANCE_METRIC
+                    distance=distance_enum
                 ),
                 on_disk_payload=qdrant_settings.ON_DISK,
                 # Apply free-tier optimized settings from COLLECTION_CONFIG
                 hnsw_config=models.HnswConfigDiff(
                     m=COLLECTION_CONFIG.get("hnsw_config", {}).get("m", 16),
                     ef_construct=COLLECTION_CONFIG.get("hnsw_config", {}).get("ef_construct", 100),
-                ),
-                optimizer_config=models.OptimizersConfigDiff(
-                    max_segment_size=COLLECTION_CONFIG.get("optimizer_config", {}).get("max_segment_size", 50000),
-                    default_segment_number=COLLECTION_CONFIG.get("optimizer_config", {}).get("default_segment_number", 2),
-                    indexing_threshold=COLLECTION_CONFIG.get("optimizer_config", {}).get("indexing_threshold", 20000),
                 )
+
+                # BELOW IS COMMENTED OUT BECAUSE OF VERSION CONFLICTS:
+                 # - optimzer_config was removed back in Qdrant >=1.7.0
+                 # - my current qdrant-client version is 1.11.0 which does not support it
+                # optimizer_config=models.OptimizersConfigDiff(
+                #     max_segment_size=COLLECTION_CONFIG.get("optimizer_config", {}).get("max_segment_size", 50000),
+                #     default_segment_number=COLLECTION_CONFIG.get("optimizer_config", {}).get("default_segment_number", 2),
+                #     indexing_threshold=COLLECTION_CONFIG.get("optimizer_config", {}).get("indexing_threshold", 20000),
+                # )
             )
     
     def store_embeddings(self,
                         chapter_id: str,
                         text_chunks: List[str],
                         embeddings: List[List[float]],
-                        metadata_list: List[Dict[str, Any]] = None):
+                        metadata_list: Optional[List[Dict[str, Any]]] = None):
         """Store text chunks with their embeddings in Qdrant"""
         if metadata_list is None:
             metadata_list = [{}] * len(text_chunks)
@@ -118,11 +132,12 @@ class QdrantService:
         # Format the results
         formatted_results = []
         for result in results:
+            payload = result.payload if result.payload else {}
             formatted_results.append({
                 'id': result.id,
-                'text': result.payload.get('text', ''),
-                'chapter_id': result.payload.get('chapter_id', ''),
-                'metadata': result.payload.get('metadata', {}),
+                'text': payload.get('text', ''),
+                'chapter_id': payload.get('chapter_id', ''),
+                'metadata': payload.get('metadata', {}),
                 'score': result.score
             })
         
@@ -147,7 +162,7 @@ class QdrantService:
     def count_points(self) -> int:
         """Get the total number of points in the collection"""
         collection_info = self.client.get_collection(self.collection_name)
-        return collection_info.points_count
+        return collection_info.points_count or 0
 
 # Global instance of Qdrant service
 qdrant_service = QdrantService()
