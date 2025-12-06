@@ -24,9 +24,38 @@ class ParsedChapter:
 
 class ContentExtractor:
     """Extracts and parses content from Docusaurus MDX files"""
-    
-    def __init__(self, docs_path: str = "frontend/docs/Chapters"):
-        self.docs_path = Path(docs_path)
+
+    def __init__(self, docs_path: str = None):
+        """Initialize with path to chapters directory"""
+        if docs_path:
+            # If explicit path is provided, use it
+            self.docs_path = Path(docs_path)
+        else:
+            # Try to determine the correct path based on the current working directory
+            # First try from current working directory
+            cwd_chapters_path = Path("frontend/docs/Chapters")
+            if cwd_chapters_path.exists() and cwd_chapters_path.is_dir():
+                self.docs_path = cwd_chapters_path
+            else:
+                # Try relative to this file (one level up from utils, then frontend)
+                file_dir = Path(__file__).parent  # backend/utils
+                fallback_path = file_dir.parent / "frontend" / "docs" / "Chapters"  # backend/frontend/docs/Chapters
+                if fallback_path.exists() and fallback_path.is_dir():
+                    self.docs_path = fallback_path
+                else:
+                    # Try one more level up from where the script might be called
+                    fallback_path = Path("../frontend/docs/Chapters")
+                    if fallback_path.exists() and fallback_path.is_dir():
+                        self.docs_path = fallback_path
+                    else:
+                        print(f"ERROR: Could not find chapters directory at any expected location:")
+                        print(f"  - {cwd_chapters_path.absolute()}")
+                        print(f"  - {Path('frontend/docs/Chapters').absolute()} (relative to cwd)")
+                        print(f"  - {fallback_path.absolute()}")
+                        print("Defaulting to './frontend/docs/Chapters' - please verify directory exists.")
+                        self.docs_path = Path("frontend/docs/Chapters")  # Default path
+
+        print(f"ContentExtractor initialized with path: {self.docs_path.absolute()}")
     
     def extract_all_chapters(self) -> List[ParsedChapter]:
         """Extract content from all chapter files"""

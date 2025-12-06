@@ -26,10 +26,12 @@ class QdrantService:
     
     def _initialize_collection(self):
         """Initialize the collection if it doesn't exist"""
+        collection_exists = True
         try:
             # Check if collection exists
             self.client.get_collection(self.collection_name)
         except:
+            collection_exists = False
             # Create collection if it doesn't exist with free-tier optimized settings
             from qdrant_client.http.models import Distance
             # Convert string distance metric to Distance enum
@@ -40,7 +42,7 @@ class QdrantService:
                 'Dot': Distance.DOT
             }
             distance_enum = distance_map.get(qdrant_settings.DISTANCE_METRIC, Distance.COSINE)
-            
+
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=models.VectorParams(
@@ -63,6 +65,22 @@ class QdrantService:
                 #     indexing_threshold=COLLECTION_CONFIG.get("optimizer_config", {}).get("indexing_threshold", 20000),
                 # )
             )
+
+        # Always ensure the required payload index exists for filtering by chapter_id
+        # regardless of whether we just created the collection or not
+        try:
+            # Try to create an index for the chapter_id field to enable filtering
+            # According to the Qdrant documentation for payload field indexes
+            self.client.create_payload_index(
+                collection_name=self.collection_name,
+                field_name="chapter_id",
+                field_schema=models.KeywordIndexParams()
+            )
+            print("Created payload index for chapter_id field")
+        except Exception as e:
+            # This might mean the index already exists, which is fine
+            print(f"Payload index for chapter_id may already exist or could not be created: {str(e)}")
+            # Don't throw an error, as this is likely just the index already existing
     
     def store_embeddings(self,
                         chapter_id: str,
