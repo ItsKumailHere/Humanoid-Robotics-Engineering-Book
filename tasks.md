@@ -36,11 +36,11 @@ description: "Task list for Humanoid Robotics AI-Driven Textbook implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize Docusaurus project with classic template
-- [ ] T002 [P] Configure GitHub Pages deployment via GitHub Actions
-- [ ] T003 [P] Install dependencies for MDX linting and structure checks
-- [ ] T004 Create the standardized chapter template (MDX) in docs/templates/chapter-template.mdx
-- [ ] T005 Create book folder structure (chapters + placeholders) in docs/chapters/
+- [x] T001 Initialize Docusaurus project with classic template
+- [x] T002 [P] Configure GitHub Pages deployment via GitHub Actions
+- [x] T003 [P] Install dependencies for MDX linting and structure checks
+- [x] T004 Create the standardized chapter template (MDX) in docs/templates/chapter-template.mdx
+- [x] T005 Create book folder structure (chapters + placeholders) in docs/chapters/
 
 ---
 
@@ -52,12 +52,12 @@ description: "Task list for Humanoid Robotics AI-Driven Textbook implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T006 Configure Docusaurus sidebar structure in sidebars.js
-- [ ] T007 Configure Docusaurus navigation in docusaurus.config.js
-- [ ] T008 [P] Set up MDX lint rules for citations and structure checks
-- [ ] T009 [P] Define content validation rules for textbook chapters
-- [ ] T010 Configure versioning system for textbook content
-- [ ] T011 Set up content chunking strategy for future RAG integration
+- [x] T006 Configure Docusaurus sidebar structure in sidebars.js
+- [x] T007 Configure Docusaurus navigation in docusaurus.config.js
+- [x] T008 [P] Set up MDX lint rules for citations and structure checks
+- [x] T009 [P] Define content validation rules for textbook chapters
+- [x] T010 Configure versioning system for textbook content
+- [x] T011 Set up content chunking strategy for future RAG integration
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -76,28 +76,28 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] Create Foundations of Humanoid Robotics chapter skeleton in docs/chapters/foundations.mdx
-- [ ] T015 [P] [US1] Create Kinematics chapter skeleton in docs/chapters/kinematics.mdx
-- [ ] T016 [P] [US1] Create Dynamics chapter skeleton in docs/chapters/dynamics.mdx
-- [ ] T017 [P] [US1] Create Actuators & Motors chapter skeleton in docs/chapters/actuators.mdx
-- [ ] T018 [P] [US1] Create Sensors chapter skeleton in docs/chapters/sensors.mdx
-- [ ] T019 [US1] Implement content (concepts, examples, diagrams, exercises) for Foundations chapter with proper citations
-- [ ] T020 [US1] Implement content (concepts, examples, diagrams, exercises) for Kinematics chapter with proper citations
-- [ ] T021 [US1] Implement content (concepts, examples, diagrams, exercises) for Dynamics chapter with proper citations
-- [ ] T022 [US1] Implement content (concepts, examples, diagrams, exercises) for Actuators & Motors chapter with proper citations
-- [ ] T023 [US1] Implement content (concepts, examples, diagrams, exercises) for Sensors chapter with proper citations
-- [ ] T024 [US1] Create SVG diagrams for Foundations chapter in static/diagrams/foundations/
-- [ ] T025 [US1] Create SVG diagrams for Kinematics chapter in static/diagrams/kinematics/
-- [ ] T026 [US1] Create SVG diagrams for Dynamics chapter in static/diagrams/dynamics/
-- [ ] T027 [US1] Create SVG diagrams for Actuators chapter in static/diagrams/actuators/
-- [ ] T028 [US1] Create SVG diagrams for Sensors chapter in static/diagrams/sensors/
-- [ ] T029 [US1] Add exercises with solutions for Foundations chapter
-- [ ] T030 [US1] Add exercises with solutions for Kinematics chapter
-- [ ] T031 [US1] Add exercises with solutions for Dynamics chapter
-- [ ] T032 [US1] Add exercises with solutions for Actuators chapter
-- [ ] T033 [US1] Add exercises with solutions for Sensors chapter
-- [ ] T034 [US1] Ensure all chapters pass MDX linting checks with required sections
-- [ ] T035 [US1] SME review and approval of all implemented chapters
+- [x] T014 [P] [US1] Create Foundations of Humanoid Robotics chapter skeleton in docs/chapters/foundations.mdx
+- [x] T015 [P] [US1] Create Kinematics chapter skeleton in docs/chapters/kinematics.mdx
+- [x] T016 [P] [US1] Create Dynamics chapter skeleton in docs/chapters/dynamics.mdx
+- [x] T017 [P] [US1] Create Actuators & Motors chapter skeleton in docs/chapters/actuators.mdx
+- [x] T018 [P] [US1] Create Sensors chapter skeleton in docs/chapters/sensors.mdx
+- [x] T019 [US1] Implement content (concepts, examples, diagrams, exercises) for Foundations chapter with proper citations
+- [x] T020 [US1] Implement content (concepts, examples, diagrams, exercises) for Kinematics chapter with proper citations
+- [x] T021 [US1] Implement content (concepts, examples, diagrams, exercises) for Dynamics chapter with proper citations
+- [x] T022 [US1] Implement content (concepts, examples, diagrams, exercises) for Actuators & Motors chapter with proper citations
+- [x] T023 [US1] Implement content (concepts, examples, diagrams, exercises) for Sensors chapter with proper citations
+- [N/A] T024 [US1] Create SVG diagrams for Foundations chapter in static/diagrams/foundations/ (diagrams removed from requirements)
+- [N/A] T025 [US1] Create SVG diagrams for Kinematics chapter in static/diagrams/kinematics/ (diagrams removed from requirements)
+- [N/A] T026 [US1] Create SVG diagrams for Dynamics chapter in static/diagrams/dynamics/ (diagrams removed from requirements)
+- [N/A] T027 [US1] Create SVG diagrams for Actuators chapter in static/diagrams/actuators/ (diagrams removed from requirements)
+- [N/A] T028 [US1] Create SVG diagrams for Sensors chapter in static/diagrams/sensors/ (diagrams removed from requirements)
+- [x] T029 [US1] Add exercises with solutions for Foundations chapter
+- [x] T030 [US1] Add exercises with solutions for Kinematics chapter
+- [x] T031 [US1] Add exercises with solutions for Dynamics chapter
+- [x] T032 [US1] Add exercises with solutions for Actuators chapter
+- [x] T033 [US1] Add exercises with solutions for Sensors chapter
+- [x] T034 [US1] Ensure all chapters pass MDX linting checks with required sections
+- [x] T035 [US1] SME review and approval of all implemented chapters
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -116,28 +116,28 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 2
 
-- [ ] T038 [P] [US2] Create Control Systems chapter skeleton in docs/chapters/control-systems.mdx
-- [ ] T039 [P] [US2] Create Motion Planning chapter skeleton in docs/chapters/motion-planning.mdx
-- [ ] T040 [P] [US2] Create Locomotion & Gait chapter skeleton in docs/chapters/locomotion.mdx
-- [ ] T041 [P] [US2] Create Perception chapter skeleton in docs/chapters/perception.mdx
-- [ ] T042 [P] [US2] Create Manipulation chapter skeleton in docs/chapters/manipulation.mdx
-- [ ] T043 [US2] Implement content (concepts, examples, diagrams, exercises) for Control Systems chapter with proper citations
-- [ ] T044 [US2] Implement content (concepts, examples, diagrams, exercises) for Motion Planning chapter with proper citations
-- [ ] T045 [US2] Implement content (concepts, examples, diagrams, exercises) for Locomotion chapter with proper citations
-- [ ] T046 [US2] Implement content (concepts, examples, diagrams, exercises) for Perception chapter with proper citations
-- [ ] T047 [US2] Implement content (concepts, examples, diagrams, exercises) for Manipulation chapter with proper citations
-- [ ] T048 [US2] Create SVG diagrams for Control Systems chapter in static/diagrams/control-systems/
-- [ ] T049 [US2] Create SVG diagrams for Motion Planning chapter in static/diagrams/motion-planning/
-- [ ] T050 [US2] Create SVG diagrams for Locomotion chapter in static/diagrams/locomotion/
-- [ ] T051 [US2] Create SVG diagrams for Perception chapter in static/diagrams/perception/
-- [ ] T052 [US2] Create SVG diagrams for Manipulation chapter in static/diagrams/manipulation/
-- [ ] T053 [US2] Add exercises with solutions for Control Systems chapter
-- [ ] T054 [US2] Add exercises with solutions for Motion Planning chapter
-- [ ] T055 [US2] Add exercises with solutions for Locomotion chapter
-- [ ] T056 [US2] Add exercises with solutions for Perception chapter
-- [ ] T057 [US2] Add exercises with solutions for Manipulation chapter
-- [ ] T058 [US2] Ensure all chapters pass MDX linting checks with required sections
-- [ ] T059 [US2] SME review and approval of all implemented chapters
+- [x] T038 [P] [US2] Create Control Systems chapter skeleton in docs/chapters/control-systems.mdx
+- [x] T039 [P] [US2] Create Motion Planning chapter skeleton in docs/chapters/motion-planning.mdx
+- [x] T040 [P] [US2] Create Locomotion & Gait chapter skeleton in docs/chapters/locomotion.mdx
+- [x] T041 [P] [US2] Create Perception chapter skeleton in docs/chapters/perception.mdx
+- [x] T042 [P] [US2] Create Manipulation chapter skeleton in docs/chapters/manipulation.mdx
+- [x] T043 [US2] Implement content (concepts, examples, diagrams, exercises) for Control Systems chapter with proper citations
+- [x] T044 [US2] Implement content (concepts, examples, diagrams, exercises) for Motion Planning chapter with proper citations
+- [x] T045 [US2] Implement content (concepts, examples, diagrams, exercises) for Locomotion chapter with proper citations
+- [x] T046 [US2] Implement content (concepts, examples, diagrams, exercises) for Perception chapter with proper citations
+- [x] T047 [US2] Implement content (concepts, examples, diagrams, exercises) for Manipulation chapter with proper citations
+- [N/A] T048 [US2] Create SVG diagrams for Control Systems chapter in static/diagrams/control-systems/ (diagrams removed from requirements)
+- [N/A] T049 [US2] Create SVG diagrams for Motion Planning chapter in static/diagrams/motion-planning/ (diagrams removed from requirements)
+- [N/A] T050 [US2] Create SVG diagrams for Locomotion chapter in static/diagrams/locomotion/ (diagrams removed from requirements)
+- [N/A] T051 [US2] Create SVG diagrams for Perception chapter in static/diagrams/perception/ (diagrams removed from requirements)
+- [N/A] T052 [US2] Create SVG diagrams for Manipulation chapter in static/diagrams/manipulation/ (diagrams removed from requirements)
+- [x] T053 [US2] Add exercises with solutions for Control Systems chapter
+- [x] T054 [US2] Add exercises with solutions for Motion Planning chapter
+- [x] T055 [US2] Add exercises with solutions for Locomotion chapter
+- [x] T056 [US2] Add exercises with solutions for Perception chapter
+- [x] T057 [US2] Add exercises with solutions for Manipulation chapter
+- [x] T058 [US2] Ensure all chapters pass MDX linting checks with required sections
+- [x] T059 [US2] SME review and approval of all implemented chapters
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -155,20 +155,20 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T061 [P] [US3] Create citation validation test in tests/content/test_citations.py 
 ### Implementation for User Story 3
 
-- [ ] T062 [P] [US3] Create Simulation chapter skeleton in docs/chapters/simulation.mdx
-- [ ] T063 [P] [US3] Create Safety chapter skeleton in docs/chapters/safety.mdx
-- [ ] T064 [P] [US3] Create AI Integration chapter skeleton in docs/chapters/ai-integration.mdx
-- [ ] T065 [US3] Implement content (concepts, examples, diagrams, exercises) for Simulation chapter with proper citations
-- [ ] T066 [US3] Implement content (concepts, examples, diagrams, exercises) for Safety chapter with proper citations
-- [ ] T067 [US3] Implement content (concepts, examples, diagrams, exercises) for AI Integration chapter with proper citations
-- [ ] T068 [US3] Create SVG diagrams for Simulation chapter in static/diagrams/simulation/
-- [ ] T069 [US3] Create SVG diagrams for Safety chapter in static/diagrams/safety/
-- [ ] T070 [US3] Create SVG diagrams for AI Integration chapter in static/diagrams/ai-integration/
-- [ ] T071 [US3] Add exercises with solutions for Simulation chapter
-- [ ] T072 [US3] Add exercises with solutions for Safety chapter
-- [ ] T073 [US3] Add exercises with solutions for AI Integration chapter
-- [ ] T074 [US3] Ensure all chapters pass MDX linting checks with required sections
-- [ ] T075 [US3] SME review and approval of all implemented chapters
+- [x] T062 [P] [US3] Create Simulation chapter skeleton in docs/chapters/simulation.mdx
+- [x] T063 [P] [US3] Create Safety chapter skeleton in docs/chapters/safety.mdx
+- [x] T064 [P] [US3] Create AI Integration chapter skeleton in docs/chapters/ai-integration.mdx
+- [x] T065 [US3] Implement content (concepts, examples, diagrams, exercises) for Simulation chapter with proper citations
+- [x] T066 [US3] Implement content (concepts, examples, diagrams, exercises) for Safety chapter with proper citations
+- [x] T067 [US3] Implement content (concepts, examples, diagrams, exercises) for AI Integration chapter with proper citations
+- [N/A] T068 [US3] Create SVG diagrams for Simulation chapter in static/diagrams/simulation/ (diagrams removed from requirements)
+- [N/A] T069 [US3] Create SVG diagrams for Safety chapter in static/diagrams/safety/ (diagrams removed from requirements)
+- [N/A] T070 [US3] Create SVG diagrams for AI Integration chapter in static/diagrams/ai-integration/ (diagrams removed from requirements)
+- [x] T071 [US3] Add exercises with solutions for Simulation chapter
+- [x] T072 [US3] Add exercises with solutions for Safety chapter
+- [x] T073 [US3] Add exercises with solutions for AI Integration chapter
+- [x] T074 [US3] Ensure all chapters pass MDX linting checks with required sections
+- [x] T075 [US3] SME review and approval of all implemented chapters
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -176,20 +176,36 @@ Examples of foundational tasks (adjust based on your project):
 
 ## Phase 6: RAG Chatbot Integration Infrastructure
 
-**Goal**: Prepare and implement infrastructure for OpenAI-powered RAG chatbot to answer questions about textbook content
+**Goal**: Prepare and implement infrastructure for RAG chatbot using Cohere embeddings and Groq LLM to answer questions about textbook content
 
 **Independent Test**: The chatbot can retrieve relevant content from the textbook and answer user questions accurately based on the textbook content.
 
-- [ ] T076 [P] Set up Postgres database schema for content embeddings using Neon
-- [ ] T077 [P] Set up Qdrant Cloud for vector storage of textbook content
-- [ ] T078 Create content chunking and preprocessing pipeline for RAG
-- [ ] T079 Implement content extraction and parsing from Docusaurus build
-- [ ] T080 Implement embedding generation and storage for textbook content
-- [ ] T081 Create FastAPI backend for RAG chatbot
-- [ ] T082 Implement OpenAI integration for question answering
-- [ ] T083 Create validation system to ensure accurate responses with minimal hallucination
-- [ ] T084 Implement integration between chatbot and Docusaurus frontend
-- [ ] T085 Test chatbot functionality with sample questions and validate accuracy
+- [x] T076 [P] Set up Postgres database schema for content embeddings using Neon
+- [x] T077 [P] Set up Qdrant Cloud for vector storage of textbook content (optimized for free tier)
+- [x] T078 Create content chunking and preprocessing pipeline for RAG
+- [x] T079 Implement content extraction and parsing from Docusaurus build (MDX files with frontmatter)
+- [x] T080 Implement embedding generation and storage for textbook content (using Cohere embeddings)
+- [x] T080a Create chat API service for frontend-backend communication
+- [x] T080b Create TypeScript interfaces for chat messages and requests
+- [x] T081 Create FastAPI backend for RAG chatbot with endpoints for chat, retrieval, health, and reload
+- [x] T081a Implement /chat endpoint for question answering
+- [x] T081b Implement /retrieve endpoint for content retrieval
+- [x] T081c Implement /health endpoint for system status
+- [x] T081d Implement /reload endpoint for content reloading
+- [x] T082 Implement LLM integration for question answering (using Groq with Llama 3.3 70b model, replacing Google Gemini)
+- [x] T083 Create validation system to ensure accurate responses with minimal hallucination
+- [x] T084 Implement integration between chatbot and Docusaurus frontend
+- [x] T084a Create floating chat button for all pages
+- [x] T084b Create slide-in chat panel component
+- [x] T084c Implement real-time communication with backend API
+- [x] T084d Add message history and loading indicators
+- [x] T084e Style chat components with responsive CSS
+- [x] T084f Add keyboard support and accessibility features
+- [x] T085 Test chatbot functionality with sample questions and validate accuracy
+- [x] T085a Test frontend-backend API communication
+- [x] T085b Test message display and interaction
+- [x] T085c Test error handling and fallbacks
+- [x] T085d Test responsive design across devices
 
 ---
 
@@ -197,20 +213,22 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T086 Ensure chapter ordering and numbering in sidebars.js
-- [ ] T087 [P] Add book-wide glossary in docs/glossary.mdx
-- [ ] T088 [P] Add book-wide bibliography in docs/bibliography.mdx
-- [ ] T089 Add front matter (title page, preface, contributors) in docs/
+- [x] T086 Ensure chapter ordering and numbering in sidebars.js
+- [x] T087 [P] Add book-wide glossary in docs/glossary.mdx
+- [x] T088 [P] Add book-wide bibliography in docs/bibliography.mdx
+- [x] T089 Add front matter (title page, preface, contributors) in docs/
 - [ ] T090 [P] Internationalization (i18n) setup for Urdu translation
 - [ ] T091 Add personalization system architecture
-- [ ] T092 [P] Documentation updates in docs/
-- [ ] T093 Code cleanup and refactoring
+- [x] T091a Configure API URL for chatbot integration in frontend
+- [x] T092 [P] Documentation updates in docs/
+- [x] T093 Code cleanup and refactoring
+- [x] T093a Integrate chat components using Docusaurus theme override
 - [ ] T094 Performance optimization across all stories
 - [ ] T095 [P] Additional unit tests (if requested) in tests/
 - [ ] T096 Security hardening
-- [ ] T097 Run quickstart.md validation
+- [x] T097 Run quickstart.md validation
 - [ ] T098 Final GitHub Pages deployment
-- [ ] T099 QA sweep (broken links, formatting checks)
+- [x] T099 QA sweep (broken links, formatting checks)
 
 ---
 
