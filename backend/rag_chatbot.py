@@ -32,7 +32,7 @@ load_dotenv()
 # Configuration
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 COHERE_API_KEY = os.getenv("COHERE_API_KEY")
-DOCS_DIRECTORY = "./frontend/Chapters"  # Adjust this path to your docs folder
+DOCS_DIRECTORY = "../frontend/docs/Chapters"  # Adjust this path to your docs folder
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 

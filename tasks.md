@@ -176,20 +176,36 @@ Examples of foundational tasks (adjust based on your project):
 
 ## Phase 6: RAG Chatbot Integration Infrastructure
 
-**Goal**: Prepare and implement infrastructure for Google Gemini-powered RAG chatbot to answer questions about textbook content
+**Goal**: Prepare and implement infrastructure for RAG chatbot using Cohere embeddings and Groq LLM to answer questions about textbook content
 
 **Independent Test**: The chatbot can retrieve relevant content from the textbook and answer user questions accurately based on the textbook content.
 
 - [x] T076 [P] Set up Postgres database schema for content embeddings using Neon
 - [x] T077 [P] Set up Qdrant Cloud for vector storage of textbook content (optimized for free tier)
 - [x] T078 Create content chunking and preprocessing pipeline for RAG
-- [x] T079 Implement content extraction and parsing from Docusaurus build
-- [x] T080 Implement embedding generation and storage for textbook content (using Google Gemini-compatible 768-dim vectors)
-- [x] T081 Create FastAPI backend for RAG chatbot
-- [x] T082 Implement Google Gemini integration for question answering (replaces OpenAI)
+- [x] T079 Implement content extraction and parsing from Docusaurus build (MDX files with frontmatter)
+- [x] T080 Implement embedding generation and storage for textbook content (using Cohere embeddings)
+- [x] T080a Create chat API service for frontend-backend communication
+- [x] T080b Create TypeScript interfaces for chat messages and requests
+- [x] T081 Create FastAPI backend for RAG chatbot with endpoints for chat, retrieval, health, and reload
+- [x] T081a Implement /chat endpoint for question answering
+- [x] T081b Implement /retrieve endpoint for content retrieval
+- [x] T081c Implement /health endpoint for system status
+- [x] T081d Implement /reload endpoint for content reloading
+- [x] T082 Implement LLM integration for question answering (using Groq with Llama 3.3 70b model, replacing Google Gemini)
 - [x] T083 Create validation system to ensure accurate responses with minimal hallucination
 - [x] T084 Implement integration between chatbot and Docusaurus frontend
+- [x] T084a Create floating chat button for all pages
+- [x] T084b Create slide-in chat panel component
+- [x] T084c Implement real-time communication with backend API
+- [x] T084d Add message history and loading indicators
+- [x] T084e Style chat components with responsive CSS
+- [x] T084f Add keyboard support and accessibility features
 - [x] T085 Test chatbot functionality with sample questions and validate accuracy
+- [x] T085a Test frontend-backend API communication
+- [x] T085b Test message display and interaction
+- [x] T085c Test error handling and fallbacks
+- [x] T085d Test responsive design across devices
 
 ---
 
@@ -203,8 +219,10 @@ Examples of foundational tasks (adjust based on your project):
 - [x] T089 Add front matter (title page, preface, contributors) in docs/
 - [ ] T090 [P] Internationalization (i18n) setup for Urdu translation
 - [ ] T091 Add personalization system architecture
+- [x] T091a Configure API URL for chatbot integration in frontend
 - [x] T092 [P] Documentation updates in docs/
 - [x] T093 Code cleanup and refactoring
+- [x] T093a Integrate chat components using Docusaurus theme override
 - [ ] T094 Performance optimization across all stories
 - [ ] T095 [P] Additional unit tests (if requested) in tests/
 - [ ] T096 Security hardening
